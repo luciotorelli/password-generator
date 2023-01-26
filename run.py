@@ -5,6 +5,7 @@ import pyfiglet
 from colorama import Fore, Style
 import os
 import sys
+import keyboard
 
 """Password Generator is a Python app that runs on a terminal.
 It creates a password based on the amount of characters requested
@@ -33,6 +34,7 @@ def get_password_length():
     typingPrint(
         "Hey there! I am passgen, a bot that will generate a password for you.\n"
     )
+    typingPrint("If you wish you can type exit or restart during the program run.\n")
     typingPrint(
         "Enter the number of characters "
         + "you want between 3 and 100 and hit enter.\n"
@@ -42,9 +44,19 @@ def get_password_length():
         try:
             # Requests the password length from the user,
             # Assigns to variable password_length
-            # Make input integer
             # Make text colored white for user input
-            password_length = int(input(Fore.WHITE))
+            password_length = input(Fore.WHITE)
+            
+            # Checks if user wants to restart or exit
+            # else, assigns the user input to password_length 
+            if password_length == "restart" or password_length == "reset":
+                restartProgram()
+                break
+            elif password_length == "exit" or password_length == "close":
+                closeProgram()
+                break
+            else:    
+                password_length = int(password_length)
 
             # Check if the password is higher than 100
             # or lower than 3, if so, raise ValueError
@@ -90,8 +102,18 @@ def get_password_strength():
         try:
             # Requests the password strength from the user,
             # Assigns to variable password_strength
-            # Make input integer
-            password_strength = int(input(Fore.WHITE))
+            password_strength = input(Fore.WHITE)
+
+            # Checks if user wants to restart or exit
+            # else, assigns the user input to password_strength as integer 
+            if password_strength == "exit" or password_strength == "close":
+                closeProgram()
+                break
+            elif password_strength == "restart" or password_strength == "reset":
+                restartProgram()
+                break
+            else:
+                password_strength = int(password_strength)
 
             # Check if the level is higher than 3
             # or lower than 1, if so, raise ValueError
@@ -211,15 +233,10 @@ def print_password(password):
 
             # Check if the user decided to restart
             # or to close the program
-            if restart == "yes" or restart == "y" or restart == "Yes":
-                print(Style.RESET_ALL)
-                os.system("cls" if os.name == "nt" else "clear")
-                os.system('python3 "run.py"')
-            elif restart == "no" or restart == "n" or restart == "No":
-                print(Fore.YELLOW)
-                typingPrint("\nThe program will be closed...")
-                print(Style.RESET_ALL)
-                sys.exit(0)
+            if restart == "yes" or restart == "y" or restart == "Yes" or restart =="restart":
+                restartProgram()
+            elif restart == "no" or restart == "n" or restart == "No" or restart =="close":
+                closeProgram()
             else:
                 raise ValueError
             # Returns to stop while loop
@@ -236,15 +253,41 @@ def print_password(password):
 
 def typingPrint(text):
     """
+    Blocks user keyboard input
     Types character by character on the terminal
     to create a typing effect.
     Change time.sleep for a faster or slower typing speed.
+    Unblocks user keyboard input
     """
+    for i in range(150):
+        keyboard.block_key(i)
+
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.018)
 
+    for i in range(150):
+        keyboard.unblock_key(i)
+
+def restartProgram():
+    """
+    Resets the style, clears the terminal and restart the program
+    """
+    print(Style.RESET_ALL)
+    os.system("cls" if os.name == "nt" else "clear")
+    os.system('python3 "run.py"')
+
+
+def closeProgram():
+    """
+    Sets terminal to Yellow, prints a warning message,
+    clear the terminal and close the program
+    """
+    print(Fore.YELLOW)
+    typingPrint("\nThe program will be closed...")
+    print(Style.RESET_ALL)
+    sys.exit(0)
 
 def main():
     """
