@@ -271,7 +271,7 @@ def closeProgram():
     print(Fore.YELLOW + "\nThe program will be closed...")
     print(Style.RESET_ALL)
     time.sleep(0.5)
-    sys.exit(0)
+    exit()
 
 
 def main():
