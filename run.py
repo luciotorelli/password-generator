@@ -29,14 +29,13 @@ def get_password_length():
     # Resets Colorama style
     print(Style.RESET_ALL)
     # Sets text color yellow
-    print(Fore.YELLOW)
-    typingPrint(
-        "Hey there! I am passgen, a bot that will generate a password for you.\n"
+    print(Fore.YELLOW +
+        "Hey there! I am passgen, a bot that will generate a password for you."
     )
-    typingPrint("If you wish you can type exit or restart during the program run.\n")
-    typingPrint(
+    print("You can type exit or restart at any point during the program run.")
+    print(
         "Enter the number of characters "
-        + "you want between 3 and 100 and hit enter.\n"
+        + "you want between 3 and 100 and hit enter."
     )
 
     while True:
@@ -65,8 +64,7 @@ def get_password_length():
             # Sends Clear Terminal command based on Operating System
             os.system("cls" if os.name == "nt" else "clear")
             # Print how many characters user selected.
-            print(Fore.YELLOW)
-            typingPrint(f"Your password will have {password_length} characters.\n")
+            print(Fore.YELLOW + f"Your password will have {password_length} characters.\n")
 
             # Returns the password_length
             return password_length
@@ -74,8 +72,7 @@ def get_password_length():
         # Raise ValueError if a character other than a number,
         # higher than 100 or lower than 3 is input by the user
         except ValueError:
-            print(Fore.RED)
-            typingPrint(
+            print(Fore.RED +
                 "No no no... I said a number between 3 and 100. "
                 + "Try again and hit enter.\n"
             )
@@ -88,8 +85,7 @@ def get_password_strength():
     via the terminal, which must be an integer between 1 to 3.
     The loop will repeatedly request data, until it is valid.
     """
-    print(Fore.YELLOW)
-    typingPrint(
+    print( Fore.YELLOW +
         "What level of strength should your password have? "
         + "I would recommend level 3! :) \n",
     )
@@ -128,8 +124,7 @@ def get_password_strength():
             ):
                 # Sends Clear Terminal command based on Operating System
                 os.system("cls" if os.name == "nt" else "clear")
-                print(Fore.YELLOW)
-                typingPrint(f"You selected level {password_strength}\n")
+                print(Fore.YELLOW + f"You selected level {password_strength}\n")
 
             # Returns the password_strength
             return password_strength
@@ -137,8 +132,7 @@ def get_password_strength():
         # Raise ValueError if a character other than a number,
         # higher than 3 or lower than 1 is input by the user
         except ValueError:
-            print(Fore.RED)
-            typingPrint(
+            print(Fore.RED +
                 "Hey! I said a number between 1 and 3" + ", try again and hit enter!\n"
             )
 
@@ -209,19 +203,20 @@ def print_password(password):
     """
     Prints the password on the console for the user.
     """
-    print(Fore.YELLOW)
-    typingPrint(
-        "Bip bop boop... computing your password\n"
-        + "...\n"
-        + "I hope you are still there...\n"
-        + "...\n"
-        + "Phew! This was hard. Here is your password:\n"
-    )
+    print(Fore.YELLOW + "Bip bop boop... computing your password\n")
+    time.sleep(0.2)
+    print("...\n")
+    print("I hope you are still there...\n")
+    time.sleep(0.2)
+    print("...\n")
+    time.sleep(0.2)
+    print("Phew! This was hard. Here is your password:\n")
+
     print(Fore.YELLOW + Style.BRIGHT)
-    typingPrint(password)
+    print(password)
 
     print(Fore.YELLOW + Style.NORMAL)
-    typingPrint("\nWould you like to restart the program? Type yes or no.\n")
+    print("\nWould you like to restart the program? Type yes or no.\n")
 
     while True:
         try:
@@ -259,20 +254,6 @@ def print_password(password):
                 "Try yes or no and hit enter.",
             )
 
-
-def typingPrint(text):
-    """
-    Blocks user keyboard input
-    Types character by character on the terminal
-    to create a typing effect.
-    Change time.sleep for a faster or slower typing speed.
-    Unblocks user keyboard input
-    """
-    
-    for character in text:
-        print(character, end='', flush=True)
-        time.sleep(0.005)
-
 def restartProgram():
     """
     Resets the style, clears the terminal and restart the program
@@ -287,9 +268,9 @@ def closeProgram():
     Sets terminal to Yellow, prints a warning message,
     clear the terminal and close the program
     """
-    print(Fore.YELLOW)
-    typingPrint("\nThe program will be closed...")
+    print(Fore.YELLOW + "\nThe program will be closed...")
     print(Style.RESET_ALL)
+    time.sleep(0.5)
     sys.exit(0)
 
 
