@@ -4,7 +4,6 @@ import time
 import pyfiglet
 from colorama import Fore, Style
 import os
-import sys
 
 """Password Generator is a Python app that runs on a terminal.
 It creates a password based on the amount of characters requested
