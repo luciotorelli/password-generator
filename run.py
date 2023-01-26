@@ -5,7 +5,6 @@ import pyfiglet
 from colorama import Fore, Style
 import os
 import sys
-import keyboard
 
 """Password Generator is a Python app that runs on a terminal.
 It creates a password based on the amount of characters requested
@@ -46,16 +45,16 @@ def get_password_length():
             # Assigns to variable password_length
             # Make text colored white for user input
             password_length = input(Fore.WHITE)
-            
+
             # Checks if user wants to restart or exit
-            # else, assigns the user input to password_length 
+            # else, assigns the user input to password_length
             if password_length == "restart" or password_length == "reset":
                 restartProgram()
                 break
             elif password_length == "exit" or password_length == "close":
                 closeProgram()
                 break
-            else:    
+            else:
                 password_length = int(password_length)
 
             # Check if the password is higher than 100
@@ -105,7 +104,7 @@ def get_password_strength():
             password_strength = input(Fore.WHITE)
 
             # Checks if user wants to restart or exit
-            # else, assigns the user input to password_strength as integer 
+            # else, assigns the user input to password_strength as integer
             if password_strength == "exit" or password_strength == "close":
                 closeProgram()
                 break
@@ -233,9 +232,19 @@ def print_password(password):
 
             # Check if the user decided to restart
             # or to close the program
-            if restart == "yes" or restart == "y" or restart == "Yes" or restart =="restart":
+            if (
+                restart == "yes"
+                or restart == "y"
+                or restart == "Yes"
+                or restart == "restart"
+            ):
                 restartProgram()
-            elif restart == "no" or restart == "n" or restart == "No" or restart =="close":
+            elif (
+                restart == "no"
+                or restart == "n"
+                or restart == "No"
+                or restart == "close"
+            ):
                 closeProgram()
             else:
                 raise ValueError
@@ -259,16 +268,10 @@ def typingPrint(text):
     Change time.sleep for a faster or slower typing speed.
     Unblocks user keyboard input
     """
-    for i in range(150):
-        keyboard.block_key(i)
-
+    
     for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.018)
-
-    for i in range(150):
-        keyboard.unblock_key(i)
+        print(character, end='', flush=True)
+        time.sleep(0.005)
 
 def restartProgram():
     """
@@ -288,6 +291,7 @@ def closeProgram():
     typingPrint("\nThe program will be closed...")
     print(Style.RESET_ALL)
     sys.exit(0)
+
 
 def main():
     """
