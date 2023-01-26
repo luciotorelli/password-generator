@@ -24,16 +24,16 @@ def get_password_length():
     """
 
     # Uses Colorama and PyFiglet to style the text
-    print(Fore.BLUE + Style.DIM + pyfiglet.figlet_format("Passgen"))
+    print(Fore.BLUE + pyfiglet.figlet_format("Passgen"))
     print(pyfiglet.figlet_format("by Lucio Torelli", font="digital"))
     # Resets Colorama style
     print(Style.RESET_ALL)
     print(
-        Fore.YELLOW + Style.DIM + "Hey there! I am passgen, a bot",
+        Fore.YELLOW + "Hey there! I am passgen, a bot",
         "that will generate a password for you.",
     )
     print(
-        Fore.YELLOW + Style.DIM + "Enter the number of characters",
+        Fore.YELLOW + "Enter the number of characters",
         "you want between 3 and 100 and hit enter.\n",
     )
 
@@ -42,20 +42,19 @@ def get_password_length():
             # Requests the password length from the user,
             # Assigns to variable password_length
             # Make input integer
-            # Make text colored and styled normal for user input
-            password_length = int(input(Fore.WHITE + Style.NORMAL))
+            # Make text colored white for user input
+            password_length = int(input(Fore.WHITE))
 
             # Check if the password is higher than 100
             # or lower than 3, if so, raise ValueError
             if password_length > 100 or password_length < 3:
                 raise ValueError
 
-            # Clears terminal
-            os.system("cls")
+            # Sends Clear Terminal command based on Operating System
+            os.system("cls" if os.name == "nt" else "clear")
             # Print how many characters user selected.
             print(
                 Fore.YELLOW
-                + Style.DIM
                 + f"Your password will have {password_length} characters"
             )
 
@@ -66,7 +65,7 @@ def get_password_length():
         # higher than 100 or lower than 3 is input by the user
         except ValueError:
             print(
-                Fore.RED + Style.DIM + "No no no... I said a number between 3 and 100.",
+                Fore.RED + "No no no... I said a number between 3 and 100.",
                 "Try again and hit enter.",
             )
 
@@ -79,19 +78,19 @@ def get_password_strength():
     The loop will repeatedly request data, until it is valid.
     """
     print(
-        Fore.YELLOW + Style.DIM + "What level of strength should your password have?",
+        Fore.YELLOW + "What level of strength should your password have?",
         "I would recommend level 3! :) \n",
     )
-    print(Fore.YELLOW + Style.DIM + "Type 1 for Only letters")
-    print(Fore.YELLOW + Style.DIM + "Type 2 for Letters and numbers")
-    print(Fore.YELLOW + Style.DIM + "Type 3 for Letters, numbers and characters\n")
+    print(Fore.YELLOW + "Type 1 for Only letters")
+    print(Fore.YELLOW + "Type 2 for Letters and numbers")
+    print(Fore.YELLOW + "Type 3 for Letters, numbers and characters\n")
 
     while True:
         try:
             # Requests the password strength from the user,
             # Assigns to variable password_strength
             # Make input integer
-            password_strength = int(input(Fore.WHITE + Style.NORMAL))
+            password_strength = int(input(Fore.WHITE))
 
             # Check if the level is higher than 3
             # or lower than 1, if so, raise ValueError
@@ -101,29 +100,26 @@ def get_password_strength():
             # Check strength level selected
             # by user to phrase the result correctly
             if password_strength == 1:
-                # Clears terminal
-                os.system("cls")
+                # Sends Clear Terminal command based on Operating System
+                os.system("cls" if os.name == "nt" else "clear")
                 print(
                     Fore.YELLOW
-                    + Style.DIM
                     + f"You selected level {password_strength}, ",
                     "your password will contain only letters",
                 )
             elif password_strength == 2:
-                # Clears terminal
-                os.system("cls")
+                # Sends Clear Terminal command based on Operating System
+                os.system("cls" if os.name == "nt" else "clear")
                 print(
                     Fore.YELLOW
-                    + Style.DIM
                     + f"You selected level {password_strength}, ",
                     "your password will contain letters and numbers.",
                 )
             else:
-                # Clears terminal
-                os.system("cls")
+                # Sends Clear Terminal command based on Operating System
+                os.system("cls" if os.name == "nt" else "clear")
                 print(
                     Fore.YELLOW
-                    + Style.DIM
                     + f"You selected level {password_strength}, ",
                     "your password will contain letters,",
                     "numbers and characters.",
@@ -136,7 +132,7 @@ def get_password_strength():
         # higher than 3 or lower than 1 is input by the user
         except ValueError:
             print(
-                Fore.RED + Style.DIM + "Hey! I said a number between 1 and 3",
+                Fore.RED + "Hey! I said a number between 1 and 3",
                 ", try again and hit enter!",
             )
 
@@ -207,7 +203,7 @@ def print_password(password):
     """
     Prints the password on the console for the user.
     """
-    print(Fore.YELLOW + Style.DIM + "Bip bop boop... computing your password...")
+    print(Fore.YELLOW + "Bip bop boop... computing your password...")
     print("...")
     # Pauses the program for 1 second then resumes.
     time.sleep(1)
