@@ -29,14 +29,15 @@ def get_password_length():
     print(Style.RESET_ALL)
     # Sets text color yellow
     print(
-        Fore.YELLOW +
-        "Hey there! I am passgen, a bot that will generate a password for you."
+        Fore.YELLOW
+        + "Hey there! I am passgen, a bot that will generate a password for you."
     )
-    print("If you want to exit or restart the program"+
-          " you can type exit or restart at any point.")
     print(
-        "Enter the number of characters " + 
-        "you want between 3 and 100 and hit enter."
+        "If you want to exit or restart the program"
+        + " you can type exit or restart\nat any point."
+    )
+    print(
+        "Enter the number of characters " + "you want between 3 and 100 and hit enter."
     )
 
     while True:
@@ -49,10 +50,10 @@ def get_password_length():
             # Checks if user wants to restart or exit
             # else, assigns the user input to password_length
             if password_length == "restart" or password_length == "reset":
-                restartProgram()
+                restart_program()
                 break
             elif password_length == "exit" or password_length == "close":
-                closeProgram()
+                close_program()
                 break
             else:
                 password_length = int(password_length)
@@ -107,10 +108,10 @@ def get_password_strength():
             # Checks if user wants to restart or exit
             # else, assigns the user input to password_strength as integer
             if password_strength == "exit" or password_strength == "close":
-                closeProgram()
+                close_program()
                 break
             elif password_strength == "restart" or password_strength == "reset":
-                restartProgram()
+                restart_program()
                 break
             else:
                 password_strength = int(password_strength)
@@ -147,14 +148,14 @@ def get_password_strength():
 def get_special_characters():
 
     print(
-        Fore.YELLOW
-        + "Please note this list of characters will be used to ",
-        "randomize the password but not all of them may be included in the password."
+        Fore.YELLOW + "Please note this list of characters will be used to",
+        "randomize the password\nbut not all of them may be included in the password.",
     )
     print(Fore.YELLOW + "Default List: $#@!%^&*")
     print(
         Fore.YELLOW
-        + "Would you like to use the default list or type a custom list? Type default or custom."
+        + "Would you like to use the default list or type a custom list?"
+        + "\nType default or custom."
     )
 
     while True:
@@ -166,9 +167,9 @@ def get_special_characters():
             # Checks if user wants to restart or exit
             # else, assigns the type of list the user wants to use
             if list_type == "exit" or list_type == "close":
-                closeProgram()
+                close_program()
             elif list_type == "restart" or list_type == "reset":
-                restartProgram()
+                restart_program()
                 break
             elif list_type == "default" or list_type == "Default":
                 special_characters = ("$", "#", "@", "!", "%", "^", "&", "*")
@@ -207,13 +208,13 @@ def get_custom_special_characters():
 
             # Checks if user wants to restart or exit
             if user_characters == "exit" or user_characters == "close":
-                closeProgram()
+                close_program()
                 break
             elif user_characters == "restart" or user_characters == "reset":
-                restartProgram()
+                restart_program()
                 break
 
-            # Converts to a set to ensure no duplicates 
+            # Converts to a set to ensure no duplicates
             # then convert it back to a list
             custom_special_characters = list(set(user_characters))
 
@@ -225,7 +226,8 @@ def get_custom_special_characters():
             ):
                 special_characters = custom_special_characters
                 print(
-                    Fore.YELLOW + f"You selected the characters: {''.join(special_characters)}"
+                    Fore.YELLOW
+                    + f"You selected the characters: {''.join(special_characters)}"
                 )
                 return special_characters
             else:
@@ -335,14 +337,14 @@ def print_password(password):
                 or restart == "Yes"
                 or restart == "restart"
             ):
-                restartProgram()
+                restart_program()
             elif (
                 restart == "no"
                 or restart == "n"
                 or restart == "No"
                 or restart == "close"
             ):
-                closeProgram()
+                close_program()
             else:
                 raise ValueError
             # Returns to stop while loop
@@ -357,7 +359,7 @@ def print_password(password):
             )
 
 
-def restartProgram():
+def restart_program():
     """
     Resets the style, clears the terminal and restart the program
     """
@@ -366,7 +368,7 @@ def restartProgram():
     os.system('python3 "run.py"')
 
 
-def closeProgram():
+def close_program():
     """
     Sets terminal to Yellow, prints a warning message,
     clear the terminal and close the program
@@ -381,11 +383,10 @@ def main():
     """
     Run all program functions
     """
-    
-    # Sends Clear Terminal command based on Operating System 
+    # Sends Clear Terminal command based on Operating System
     # before running all functions
-    os.system("cls" if os.name == "nt" else "clear")
-    
+    # os.system("cls" if os.name == "nt" else "clear")
+
     password_length = get_password_length()
     password_strength = get_password_strength()
     password = generate_password(password_length, password_strength)
