@@ -4,6 +4,7 @@ import time
 import pyfiglet
 from colorama import Fore, Style
 import os
+import sys
 
 """Password Generator is a Python app that runs on a terminal.
 It creates a password based on the amount of characters requested
@@ -374,10 +375,8 @@ def close_program():
     clear the terminal and close the program
     """
     os.system("cls" if os.name == "nt" else "clear")
-    print(Fore.YELLOW + "\nThe program is closed.")
-    sys.exit(0)
-    exit()
-
+    print(Fore.YELLOW + "\nThe program is now closed.")
+    sys.exit()
 
 def main():
     """
@@ -386,6 +385,8 @@ def main():
     # Sends Clear Terminal command based on Operating System
     # before running all functions
     # os.system("cls" if os.name == "nt" else "clear")
+
+    os.system("cls" if os.name == "nt" else "clear")
 
     password_length = get_password_length()
     password_strength = get_password_strength()
