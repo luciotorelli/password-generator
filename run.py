@@ -344,6 +344,7 @@ def print_password(password):
                 or restart == "n"
                 or restart == "No"
                 or restart == "close"
+                or restart == "exit"
             ):
                 close_program()
             else:
