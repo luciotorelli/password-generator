@@ -373,9 +373,9 @@ def close_program():
     Sets terminal to Yellow, prints a warning message,
     clear the terminal and close the program
     """
-    print(Fore.YELLOW + "\nThe program will be closed...")
-    print(Style.RESET_ALL)
-    time.sleep(0.5)
+    os.system("cls" if os.name == "nt" else "clear")
+    print(Fore.YELLOW + "\nThe program is closed.")
+    sys.exit(0)
     exit()
 
 
