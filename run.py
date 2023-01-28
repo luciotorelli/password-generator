@@ -379,7 +379,7 @@ def print_password(password):
     print("Phew! This was hard. Here is your password:\n")
 
     print(Fore.YELLOW + Style.BRIGHT)
-    print(type(password))
+    print(password)
 
     print(Fore.YELLOW + Style.NORMAL)
     print("\nWould you like to restart the program? Type yes or no.\n")
