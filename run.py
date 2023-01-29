@@ -25,6 +25,11 @@ Imports module
         This module provides a portable way of using
         operating system dependent functionality.
         It is used in this project to clear the terminal in-between functions.
+    sys
+        This module provides access to some variables used or maintained by
+        the interpreter and to functions that interact strongly with the
+        interpreter.
+        It is used in this project to call sys.exit() to close the program.
 """
 
 import random
