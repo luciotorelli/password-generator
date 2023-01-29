@@ -20,17 +20,18 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
 2.  [User Stories](https://github.com/luciotorelli/password-generator#user-stories)
 3.  [App Owner Goals](https://github.com/luciotorelli/password-generator#app-owner-goals)
 4.  [Chart](https://github.com/luciotorelli/password-generator#chart)
-5.  [Features](https://github.com/luciotorelli/password-generator#features)
+5.  [Dataset of parameters](https://github.com/luciotorelli/password-generator#dataset-of-parameters)
+6.  [Features](https://github.com/luciotorelli/password-generator#features)
     - [Features](https://github.com/luciotorelli/password-generator#features)
     - [Future Features](https://github.com/luciotorelli/password-generator#features)
-6.  [Technologies used](https://github.com/luciotorelli/password-generator#technologies-used)
-7.  [Testing](https://github.com/luciotorelli/password-generator#testing)
+7.  [Technologies used](https://github.com/luciotorelli/password-generator#technologies-used)
+8.  [Testing](https://github.com/luciotorelli/password-generator#testing)
     - [8.1 CI Python Linter](https://github.com/luciotorelli/password-generator#ci-python-linter)
     - [8.2 Test cases](https://github.com/luciotorelli/password-generator#test-cases)
     - [8.3 Browser Compatibility](https://github.com/luciotorelli/password-generator#browser-compatibility)
     - [8.4 Bugs](https://github.com/luciotorelli/password-generator#bugs)
-8.  [Deployment](https://github.com/luciotorelli/password-generator#deployment)
-9.  [Credits](https://github.com/luciotorelli/password-generator#credits)
+9.  [Deployment](https://github.com/luciotorelli/password-generator#deployment)
+10. [Credits](https://github.com/luciotorelli/password-generator#credits)
     - [10.1 Special Thanks!](https://github.com/luciotorelli/password-generator#special-thanks)
     - [10.2 Resources used](https://github.com/luciotorelli/password-generator#resources-used)
     - [10.3 Tutorials used](https://github.com/luciotorelli/password-generator#tutorials-used-no-code-was-copied-and-pasted-only-inspired-or-adapted)
@@ -66,6 +67,112 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
 <img id="chart" src="readme-assets/chart.png"
      alt="Am I responsive"
      width="1000px" style="max-width: 100%;"/>
+---
+
+## Dataset of parameters
+
+| Password Length | Letters | Numbers | Default special characters | Custom special characters allowed |
+| --------------- | ------- | ------- | -------------------------- | --------------------------------- |
+| 3               | a       | 0       | $                          | !                                 |
+| 4               | b       | 1       | #                          | "                                 |
+| 5               | c       | 2       | @                          | #                                 |
+| 6               | d       | 3       | !                          | $                                 |
+| 7               | e       | 4       | %                          | %                                 |
+| 8               | f       | 5       | ^                          | &                                 |
+| 9               | g       | 6       | &                          | '                                 |
+| 10              | h       | 7       | \*                         | (                                 |
+| 11              | i       | 8       |                            | )                                 |
+| 12              | j       | 9       |                            | \*                                |
+| 13              | k       |         |                            | +                                 |
+| 14              | l       |         |                            | ,                                 |
+| 15              | m       |         |                            | \-                                |
+| 16              | n       |         |                            | .                                 |
+| 17              | o       |         |                            | /                                 |
+| 18              | p       |         |                            | :                                 |
+| 19              | q       |         |                            | ;                                 |
+| 20              | r       |         |                            | <                                 |
+| 21              | s       |         |                            | \=                                |
+| 22              | t       |         |                            | \>                                |
+| 23              | u       |         |                            | ?                                 |
+| 24              | v       |         |                            | @                                 |
+| 25              | w       |         |                            | [                                 |
+| 26              | x       |         |                            | \\                                |
+| 27              | y       |         |                            | ]                                 |
+| 28              | z       |         |                            | ^                                 |
+| 29              | A       |         |                            | _                                 |
+| 30              | B       |         |                            | \`                                |
+| 31              | C       |         |                            | {                                 |
+| 32              | D       |         |                            | |                                 |
+| 33              | E       |         |                            | }                                 |
+| 34              | F       |         |                            | ~                                 |
+| 35              | G       |         |                            | .                                 |
+| 36              | H       |         |                            |                                   |
+| 37              | I       |         |                            |                                   |
+| 38              | J       |         |                            |                                   |
+| 39              | K       |         |                            |                                   |
+| 40              | L       |         |                            |                                   |
+| 41              | M       |         |                            |                                   |
+| 42              | N       |         |                            |                                   |
+| 43              | O       |         |                            |                                   |
+| 44              | P       |         |                            |                                   |
+| 45              | Q       |         |                            |                                   |
+| 46              | R       |         |                            |                                   |
+| 47              | S       |         |                            |                                   |
+| 48              | T       |         |                            |                                   |
+| 49              | U       |         |                            |                                   |
+| 50              | V       |         |                            |                                   |
+| 51              | W       |         |                            |                                   |
+| 52              | X       |         |                            |                                   |
+| 53              | Y       |         |                            |                                   |
+| 54              | Z       |         |                            |                                   |
+| 55              |         |         |                            |                                   |
+| 56              |         |         |                            |                                   |
+| 57              |         |         |                            |                                   |
+| 58              |         |         |                            |                                   |
+| 59              |         |         |                            |                                   |
+| 60              |         |         |                            |                                   |
+| 61              |         |         |                            |                                   |
+| 62              |         |         |                            |                                   |
+| 63              |         |         |                            |                                   |
+| 64              |         |         |                            |                                   |
+| 65              |         |         |                            |                                   |
+| 66              |         |         |                            |                                   |
+| 67              |         |         |                            |                                   |
+| 68              |         |         |                            |                                   |
+| 69              |         |         |                            |                                   |
+| 70              |         |         |                            |                                   |
+| 71              |         |         |                            |                                   |
+| 72              |         |         |                            |                                   |
+| 73              |         |         |                            |                                   |
+| 74              |         |         |                            |                                   |
+| 75              |         |         |                            |                                   |
+| 76              |         |         |                            |                                   |
+| 77              |         |         |                            |                                   |
+| 78              |         |         |                            |                                   |
+| 79              |         |         |                            |                                   |
+| 80              |         |         |                            |                                   |
+| 81              |         |         |                            |                                   |
+| 82              |         |         |                            |                                   |
+| 83              |         |         |                            |                                   |
+| 84              |         |         |                            |                                   |
+| 85              |         |         |                            |                                   |
+| 86              |         |         |                            |                                   |
+| 87              |         |         |                            |                                   |
+| 88              |         |         |                            |                                   |
+| 89              |         |         |                            |                                   |
+| 90              |         |         |                            |                                   |
+| 91              |         |         |                            |                                   |
+| 92              |         |         |                            |                                   |
+| 93              |         |         |                            |                                   |
+| 94              |         |         |                            |                                   |
+| 95              |         |         |                            |                                   |
+| 96              |         |         |                            |                                   |
+| 97              |         |         |                            |                                   |
+| 98              |         |         |                            |                                   |
+| 99              |         |         |                            |                                   |
+| 100             |         |         |                            |
+
+
 ---
 
 ## Features
