@@ -102,7 +102,7 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
 | 29              | A       |         |                            | _                                 |
 | 30              | B       |         |                            | \`                                |
 | 31              | C       |         |                            | {                                 |
-| 32              | D       |         |                            | |                                 |
+| 32              | D       |         |                            | &#124;                                 |
 | 33              | E       |         |                            | }                                 |
 | 34              | F       |         |                            | ~                                 |
 | 35              | G       |         |                            | .                                 |
