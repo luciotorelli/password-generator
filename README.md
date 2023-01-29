@@ -174,11 +174,10 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
 
 
 ---
+<br>
 
 ## Features
-
-<details>
-   <summary>Features</summary>
+<br>
     1. In the first run the user is able to choose the quantity of characters their password should have.
     <img src="readme-assets/features/how-many-characters.webp" width="1000px" />
     2. If the user types any value other than an integer between 3 and 100 or exit and restart, an error is displayed.
@@ -209,10 +208,8 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
     <img src="readme-assets/features/restart-program.webp" width="1000px" />
     15. If the user types anything other than yes, y, no, n, restart or exit, they will receive an error and be allowed to input again.
     <img src="readme-assets/features/restart-error.webp" width="1000px" />    
-</details>
 
-<details>
-   <summary>Future Features</summary>
+### Future Features
   
   1. A typing animation to make the bot seem more lively; it was implemented with a for loop but created further bugs that were not fixable within the time frame or resources used for the project.
   
@@ -220,7 +217,7 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
   
   3. To allow the user to go back on their input without restarting the entire application.
 
-</details>
+
 
 ---
 
