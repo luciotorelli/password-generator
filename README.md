@@ -30,6 +30,7 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
     - [8.2 Test cases](https://github.com/luciotorelli/password-generator#test-cases)
     - [8.3 Browser Compatibility](https://github.com/luciotorelli/password-generator#browser-compatibility)
     - [8.4 Bugs](https://github.com/luciotorelli/password-generator#bugs)
+    - [8.5 Feedback](https://github.com/luciotorelli/password-generator#feedback)
 9.  [Deployment](https://github.com/luciotorelli/password-generator#deployment)
 10. [Credits](https://github.com/luciotorelli/password-generator#credits)
     - [10.1 Special Thanks!](https://github.com/luciotorelli/password-generator#special-thanks)
@@ -213,9 +214,11 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
   
   1. A typing animation to make the bot seem more lively; it was implemented with a for loop but created further bugs that were not fixable within the time frame or resources used for the project.
   
-  2. To allow the user to generate more than one password at the same time using the same parameters.
+  2. Allow the user to generate more than one password at the same time using the same parameters.
   
-  3. To allow the user to go back on their input without restarting the entire application.
+  3. Allow the user to go back on their input without restarting the entire application.
+  
+  4. Allow the user to select lowercase, uppercase or mixed letters.
 
 
 
@@ -252,14 +255,14 @@ Password Generator is a Python app that runs on a terminal. It creates a passwor
 
 ### Browser Compatibility
 
-| Browser | Compatible    | Notes |
-| :---:   | :---: | :---: |
-| Chrome Desktop | Yes  | N/A   |
-| Opera Desktop | Yes  | N/A   |
-| Edge Desktop | Yes  | N/A   |
-| Firefox Desktop | Yes  | N/A   |
-| Mobile Browsers | No  | See [Issue 7](https://github.com/luciotorelli/password-generator/issues/7) for more details   |
-| Safari Desktop or Mobile | No  | See [Issue 7](https://github.com/luciotorelli/password-generator/issues/7) for more details   |
+| Browser | Compatible    | Notes | Version Tested |
+| :---:   | :---: | :---: | :---: |
+| Chrome Desktop | Yes  | N/A   | 109.0.5414.125   |
+| Opera Desktop | Yes  | N/A   | 94.0.4606.65   |
+| Edge Desktop | Yes  | N/A   | 1462.46   |
+| Firefox Desktop | Yes  | N/A   | v109. 0   |
+| Mobile Browsers | No  | See [Issue 7](https://github.com/luciotorelli/password-generator/issues/7) for more details   | N/A   |
+| Safari Desktop or Mobile | No  | See [Issue 7](https://github.com/luciotorelli/password-generator/issues/7) for more details   | N/A   |
 
 ---
 
@@ -271,7 +274,21 @@ Bugs were logged using GitHub native bug tracking system. All logged bugs can be
 
 <img src="readme-assets/testing/bugs.png" width="1000px" />
 
+<br>
+
+### Feedback
+
+| Feedback | Implemented/Fixed  | Notes |
+| :---:   | :---: | :---: |
+| The message that displays when you exit "The program will be closed..." it feels like we are waiting for something to happen i.e. it wasn't clear to me that the program had closed yet. | Yes  | N/A   |
+| It works perfectly on desktop but on mobile when I try to type custom, it types numbers instead. | No  | See [Issue 7](https://github.com/luciotorelli/password-generator/issues/7) for more details   |
+| Provide the user with the set of custom special characters allowed in the custom special character list step | Yes  | N/A   |
+| Allow the user to select lower case, uppercase or mixed | No  | Added to Future Features   |
+| Provide the user with the set of custom special characters allowed in the custom special character list step | Yes  | N/A   |
+| Differentiate the text of program outputs and user inputs | Yes  | N/A |
 ---
+
+<br>
 
 ## Deployment
 
