@@ -325,7 +325,7 @@ def generate_password(password_length, password_strength):
         # Adds a random letter to the password
         # until the password_length is reached.
         while i < password_length:
-            password = password + random.choice(string.ascii_letters)
+            password += random.choice(string.ascii_letters)
             i += 1
         return password
 
@@ -337,10 +337,10 @@ def generate_password(password_length, password_strength):
         # Else, adds an integer to the password.
         while i < password_length:
             if i % 2:
-                password = password + \
+                password += \
                     random.choice(string.ascii_letters)
             else:
-                password = password + str(random.randint(0, 9))
+                password += str(random.randint(0, 9))
             i += 1
         # Shuffles the password randomly
         password = "".join(random.sample(password, len(password)))
@@ -360,13 +360,13 @@ def generate_password(password_length, password_strength):
         special_characters = get_special_characters()
         while i < password_length:
             if i % 2:
-                password = password + \
+                password += \
                     random.choice(string.ascii_letters)
             elif i % 3 == 0:
-                password = password + \
+                password += \
                     random.choice(special_characters)
             else:
-                password = password + str(random.randint(0, 9))
+                password += str(random.randint(0, 9))
             i += 1
         # Shuffles the password randomly
         password = "".join(random.sample(password, len(password)))
@@ -404,20 +404,9 @@ def print_password(password):
 
             # Check if the user wants to restart
             # or to close the program
-            if (
-                restart == "yes"
-                or restart == "y"
-                or restart == "Yes"
-                or restart == "restart"
-            ):
+            if (restart in ["yes", "y", "Yes", "restart"]):
                 restart_program()
-            elif (
-                restart == "no"
-                or restart == "n"
-                or restart == "No"
-                or restart == "close"
-                or restart == "exit"
-            ):
+            elif (restart in ["no", "n", "No", "close", "exit"]):
                 close_program()
             else:
                 raise ValueError
