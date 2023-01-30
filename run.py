@@ -293,8 +293,8 @@ def get_custom_special_characters():
         except ValueError:
             print(
                 Fore.RED
-                + "Nope! You need to type special characters such as !@%^",
-                ", try again and hit enter!\n",
+                + "Nope! You need to type special characters such as !@%^"
+                + ", try again and hit enter!\n",
             )
 
 
