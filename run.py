@@ -212,7 +212,8 @@ def get_special_characters():
                 restart_program()
                 break
             elif list_type == "default" or list_type == "Default":
-                special_characters = ("$", "#", "@", "!", "%", "^", "&", "*")
+                special_characters = (
+                    "$", "#", "@", "!", "%", "^", "&", "*")
             elif list_type == "custom" or list_type == "Custom":
                 special_characters = get_custom_special_characters()
             else:
@@ -247,7 +248,8 @@ def get_custom_special_characters():
         + "Type your special character list, "
         + "do not space or separate characters."
     )
-    print(Fore.YELLOW + "Example: $@!")
+    print(Fore.YELLOW + "Special characters supported: !\"#$%&'()*+,-./:;"
+          + "<=>?@[]^_`{|}~\\")
 
     while True:
         try:
@@ -335,7 +337,8 @@ def generate_password(password_length, password_strength):
         # Else, adds an integer to the password.
         while i < password_length:
             if i % 2:
-                password = password + random.choice(string.ascii_letters)
+                password = password + \
+                    random.choice(string.ascii_letters)
             else:
                 password = password + str(random.randint(0, 9))
             i += 1
@@ -357,9 +360,11 @@ def generate_password(password_length, password_strength):
         special_characters = get_special_characters()
         while i < password_length:
             if i % 2:
-                password = password + random.choice(string.ascii_letters)
+                password = password + \
+                    random.choice(string.ascii_letters)
             elif i % 3 == 0:
-                password = password + random.choice(special_characters)
+                password = password + \
+                    random.choice(special_characters)
             else:
                 password = password + str(random.randint(0, 9))
             i += 1
