@@ -264,6 +264,10 @@ def get_custom_special_characters():
                 restart_program()
                 break
 
+            # Check if user entered an empty input
+            if user_characters == "":
+                raise ValueError
+
             # Converts to a set to ensure no duplicates
             # then converts it to a list
             custom_special_characters = list(set(user_characters))
